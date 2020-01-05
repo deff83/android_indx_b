@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#18B773</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorCardMain">#F9F9F9</color>
+
+    <color name="colorToolCard">#F9F9F9</color>
+    <color name="backGround">#EDEFF2</color>
+    <color name="buyColor">#1876B7</color>
+    <color name="sellColor">#18B773</color>
+    <color name="tableDarkOfferlist">#F7F7F7</color>
+    <color name="tableLightOfferlist">#FEFEFE</color>
+
+
+
+</resources>
