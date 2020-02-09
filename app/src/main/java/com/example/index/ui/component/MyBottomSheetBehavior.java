@@ -25,37 +25,27 @@ public class MyBottomSheetBehavior<V extends View> extends BottomSheetBehavior<V
        super(context, attrs);
    }
 
-    public void setAllowUserDraggingFalse(ScrollView scrollView) {
-        /*scrollView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction()==MotionEvent.ACTION_DOWN){
-                    mAllowUserDragging = false;
-                }
-                if(event.getAction()==MotionEvent.ACTION_UP){
-                    mAllowUserDragging = true;
-                }
 
-                return true;
-            }
-        });*/
-    }
 
 
     @Override
     public boolean onTouchEvent(CoordinatorLayout parent, V child, MotionEvent event) {
+        Log.d(TAG, "onTouchEvent: "+super.onTouchEvent(parent, child, event));
         return super.onTouchEvent(parent, child, event);
     }
 
     @Override
    public boolean onInterceptTouchEvent(CoordinatorLayout parent, V child, MotionEvent event) {
 
-       Log.d(TAG, "onInterceptTouchEvent: "+child);
+       Log.d(TAG, "onInterceptTouchEvent: "+super.onInterceptTouchEvent(parent, child, event)+" + " + event.getAction());
 
-       if (!mAllowUserDragging) {
-           return false;
-       }
-       return super.onInterceptTouchEvent(parent, child, event);
+       /*
+        2020-02-10 00:20:01.704 6987-6987/com.example.index D/MyBottomSheetBehavior: onInterceptTouchEvent: false + 3
+        2020-02-10 00:20:01.704 6987-6987/com.example.index D/MyBottomSheetBehavior: onInterceptTouchEvent: false + 0
+        2020-02-10 00:20:01.784 6987-6987/com.example.index D/MyBottomSheetBehavior: onInterceptTouchEvent: true + 2
+        return false;
+        */
+       return false;
    }
 }
 

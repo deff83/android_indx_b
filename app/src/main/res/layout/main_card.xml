@@ -58,19 +58,19 @@
 
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal">
 
-                        <include layout="@layout/layout_buy"/>
+                        <include layout="@layout/layout_buy" />
 
                         <View
                             android:id="@+id/divider"
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:background="?android:attr/listDivider" />
-                        <include layout="@layout/layout_sell"/>
+                        <include layout="@layout/layout_sell" />
 
                     </LinearLayout>
 

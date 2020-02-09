@@ -122,18 +122,6 @@ public class HomeFragment extends Fragment {
         recyclerView_buyer = (RecyclerView) root.findViewById(R.id.layout_buyer);
         recyclerView_seller = (RecyclerView) root.findViewById(R.id.layout_seller);
 
-        //LinearLayoutManager offerLayoutManager1 = new LinearLayoutManager(getContext());
-        //offerLayoutManager1.setSmoothScrollbarEnabled(true);
-        //recyclerView_buyer.setLayoutManager(offerLayoutManager1);
-        //recyclerView_buyer.setNestedScrollingEnabled(true);
-
-       //LinearLayoutManager offerLayoutManager = new LinearLayoutManager(getContext());
-        //offerLayoutManager.setSmoothScrollbarEnabled(true);
-        //recyclerView_seller.setLayoutManager(offerLayoutManager);
-        //recyclerView_seller.setNestedScrollingEnabled(true);
-
-        /*NestedScrollView nestedScrollView = new NestedScrollView(getContext());
-        nestedScrollView.addView(recyclerView_seller);*/
 
 
         title_main_card = (TextView)  root.findViewById(R.id.title_main_card);
