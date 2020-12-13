@@ -69,6 +69,12 @@ public class IndexService extends LifecycleService {
                             new ApiContext()
                     );
                     Response<Balance_Responce> response = resatAPIClient.getBalance(bodyOfferList).execute();
+
+                    if (!response.isSuccessful()) {
+                        System.out.println("response.body()==null Balance_Responce");
+                        return;
+                    }
+
                     dbLive.setBalance_responceMutableLiveData(response.body());
                     tekUpdate = EnumIndex.BALANCE;
                     return;
@@ -93,6 +99,12 @@ public class IndexService extends LifecycleService {
                             new TradingHistoryTrading(60, "20191230", "20200102")
                     );
                     Response<HistoryTrading_Responce> response = resatAPIClient.getHistoryTrading(bodyHistoryTrading).execute();
+
+                    if (!response.isSuccessful()) {
+                        System.out.println("response.body()==null HistoryTrading_Responce");
+                        return;
+                    }
+
                     dbLive.setHistoryTrading_responceMutableLiveData(response.body());
                     tekUpdate = EnumIndex.HISTORYTRADING;
                     return;

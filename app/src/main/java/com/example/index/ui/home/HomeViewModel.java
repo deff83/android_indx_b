@@ -111,6 +111,10 @@ public class HomeViewModel extends ViewModel {
                         new ApiContext()
                 );
                 Response<Tools_Responce> response = resatAPIClient.getTools(bodyOfferList).execute();
+                if (!response.isSuccessful()) {
+                    System.out.println("response.body()==null Tools_Responce");
+                    return;
+                }
                 tools_responceMutableLiveData.postValue(response.body());
                 List<Tool> list = response.body().getToolList();
                 for (int i = 0; i < list.size(); i++) {
@@ -138,7 +142,16 @@ public class HomeViewModel extends ViewModel {
                         new Trading(tekCoin)
                 );
                 Response<OfferList_Responce> response = resatAPIClient.getOfferList(bodyOfferList).execute();
-               if(mapCoin.containsKey(tekCoin))response.body().setName(mapCoin.get(tekCoin));
+                if (!response.isSuccessful()) {
+                    System.out.println("response.body()==null OfferList_Responce");
+                    return;
+                }
+                System.out.println(response);
+                System.out.println(response.body());
+                System.out.println(tekCoin);
+                System.out.println(mapCoin.get(tekCoin));
+
+                if(mapCoin.containsKey(tekCoin))response.body().setName(mapCoin.get(tekCoin));
                 response.body().setIdCoin(tekCoin);
                 offerList_responceMutableLiveData.postValue(response.body());
                 Log.d(TAG, "run: "+response.body());
